@@ -3,15 +3,15 @@
   <div class="container">
 
     <div class="top-section">
-      <img *ngIf="temperature <= 15" src="../assets/cold-weather.jpg" alt="cold-weather" class="weather-img">
-      <img *ngIf="temperature > 15" src="../assets/hot-weather.jpg" alt="hot-weather" class="weather-img">
+      <img *ngIf="currentWeatherData.current.temp_c <= 18" src="../assets/cold-weather.jpg" alt="cold-weather" class="weather-img">
+      <img *ngIf="currentWeatherData.current.temp_c > 18" src="../assets/hot-weather.jpg" alt="hot-weather" class="weather-img">
 
       <div class="weather-data">
         <div class="location">
-          Delhi
+          {{currentWeatherData.location.name}}
         </div>
         <div class="temperature">
-          {{14.04 | number : '1.0-0'}}°C
+          {{currentWeatherData.current.temp_c | number : '1.0-0'}}°C
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
             <span>min</span>
           </div>
           <div class="info-block-value">
-            13°C
+            {{currentWeatherData.current.min_temp_c || currentWeatherData.current.temp_c - 5 | number : '1.0-0'}}°C
           </div>
         </div>
 
@@ -38,7 +38,7 @@
             <span>max</span>
           </div>
           <div class="info-block-value">
-            13°C
+            {{currentWeatherData.current.max_temp_c || currentWeatherData.current.temp_c + 5 | number:'1.0-0'}}°C
           </div>
         </div>
 
@@ -49,7 +49,7 @@
             <span>humidity</span>
           </div>
           <div class="info-block-value">
-            60%
+            {{currentWeatherData.current.humidity}}%
           </div>
         </div>
 
@@ -60,12 +60,16 @@
             <span>wind</span>
           </div>
           <div class="info-block-value">
-            12km/h
+            {{currentWeatherData.current.wind_kph}}km/h
           </div>
         </div>
 
       </div>
     </div>
+  </div>
+
+  <div>
+    <input [(ngModel)]="currentLocationInput" type="text" placeholder="Enter Location" (keyup.enter) = "getWeatherData()">
   </div>
 
 </main>
