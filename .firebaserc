@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "miniprojects-affbd": {
+      "hosting": {
+        "WeatherApp": [
+          "miniprojects-affbd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "miniprojects-affbd"
+  }
+}

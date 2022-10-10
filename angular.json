@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "WeatherApp:build:production",
+            "firebaseProject": "miniprojects-affbd",
+            "firebaseHostingSite": "miniprojects-affbd"
+          }
         }
       }
     }
