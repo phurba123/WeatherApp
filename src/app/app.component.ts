@@ -22,7 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.currentWeatherData = this._weather.getData();
 
     // if weather data is not saved initially then give some dummy data, for dev purpose only
-    if (!this.currentWeatherData || {}) {
+    if (!this.currentWeatherData || Object.keys(this.currentWeatherData).length === 0) {
       this.currentWeatherData = {
         current: {
           temp_c: 21,
