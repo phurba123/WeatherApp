@@ -68,8 +68,12 @@
     </div>
   </div>
 
-  <div>
-    <input [(ngModel)]="currentLocationInput" type="text" placeholder="Enter Location" (keyup.enter) = "getWeatherData()">
-  </div>
-
 </main>
+
+<div id="input-div">
+
+  <form (ngSubmit)="getWeatherData()">
+    <input [(ngModel)]="currentLocationInput" name="currentLocationInput" type="text" placeholder="Enter Location">
+  </form>
+
+</div>

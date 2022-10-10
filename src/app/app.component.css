@@ -15,6 +15,7 @@ main{
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--custom-box-shadow);
+    margin-top: 10vh;
 }
 
 /* .cold-bg{
@@ -101,4 +102,38 @@ main{
 .info-container .info-block .info-block-label img{
     width: 1.5em;
     height: 1.5em;
+}
+
+#input-div {
+    position: absolute;
+    top: 4vh;
+    width: 100%;
+    text-align: center;
+}
+
+#input-div form input {
+    background-color: var(--misty-blue);
+    border: 1px solid var(--teal-green);
+    padding: 4px 18px;
+    border-radius: var(--border-radius);
+    color: var(--ivory);
+}
+
+#input-div form input:focus {
+    outline: 1px solid green;
+}
+
+/* Media queries */
+@media screen and (max-width : 500px) {
+    
+    .container{
+        flex-basis: 90%;
+    }
+}
+
+@media screen and (min-width : 501px) and (max-width : 1000px) {
+    
+    .container{
+        flex-basis: 60%;
+    }
 }
