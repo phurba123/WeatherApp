@@ -120,7 +120,7 @@ main{
 }
 
 #input-div form input:focus {
-    outline: 1px solid green;
+    outline: 1.5px solid green;
 }
 
 /* Media queries */
